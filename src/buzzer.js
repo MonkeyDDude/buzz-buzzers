@@ -54,7 +54,7 @@ module.exports = (device, options) => {
     function sendKeepAlive() {
         try {
             console.log('sending....');
-            device.setLeds([false, false, false, false]);
+            device.setLeds([true, true, false, false]);
         } catch (e) {
             // older versions don't have an led
         }
@@ -71,7 +71,7 @@ module.exports = (device, options) => {
         keepAliveTimeout = setTimeout(function() {
             sendKeepAlive();
             resetKeepAlive();
-        }, 1000 * 60 * 19);
+        }, 1000 * 30 * 1);
     }
     resetKeepAlive();
 
